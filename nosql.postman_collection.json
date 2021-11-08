@@ -1,0 +1,1965 @@
+{
+	"info": {
+		"_postman_id": "3b15157d-62ce-4753-b361-b6feb4c74802",
+		"name": "nosql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "list All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:17:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"$oid\": \"618885334c81e5425829bd53\"\n        },\n        \"email\": \"a@a.com\",\n        \"password\": \"test123\",\n        \"nombre\": \"pepe\",\n        \"apellido\": \"chuelo\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"618885674c81e5425829bd54\"\n        },\n        \"email\": \"b@a.com\",\n        \"password\": \"test1234\",\n        \"nombre\": \"pepe2\",\n        \"apellido\": \"chuelo3\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"618888564c81e5425829bd5a\"\n        },\n        \"email\": \"c@a.com\",\n        \"password\": \"test1234\",\n        \"nombre\": \"pepe2\",\n        \"apellido\": \"chuelo3\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/b@a.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"b@a.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/usuarios/b@a.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"b@a.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:27:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"618885674c81e5425829bd54\"\n    },\n    \"email\": \"b@a.com\",\n    \"password\": \"test1234\",\n    \"nombre\": \"pepe2\",\n    \"apellido\": \"chuelo3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "c@a.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "pepe2",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "chuelo3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:15:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "Create User fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:18:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"101\"\n}"
+						}
+					]
+				},
+				{
+					"name": "addrol",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "c@a.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								},
+								{
+									"key": "roles",
+									"value": "rol1,    rol2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/addrol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"addrol"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addrol bad pass",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test12341",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:10:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"104\"\n}"
+						},
+						{
+							"name": "addrol success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:10:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "Create User success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:15:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "Create User fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:18:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"101\"\n}"
+						},
+						{
+							"name": "addrol inexistent ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2, sdfsdf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:08:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"warning\": \"some roles doesn't exists\"\n}"
+						},
+						{
+							"name": "addrol bad user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.comw",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:11:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"102\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delrol",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "c@a.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								},
+								{
+									"key": "roles",
+									"value": "rol1,    rol2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/delrol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"delrol"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addrol inexistent ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2, sdfsdf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:08:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"warning\": \"some roles doesn't exists\"\n}"
+						},
+						{
+							"name": "Create User fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:18:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"101\"\n}"
+						},
+						{
+							"name": "addrol bad pass",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test12341",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:10:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"104\"\n}"
+						},
+						{
+							"name": "addrol success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:10:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "addrol bad user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.comw",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/addrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"addrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:11:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"102\"\n}"
+						},
+						{
+							"name": "Create User success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "nombre",
+											"value": "pepe2",
+											"type": "text"
+										},
+										{
+											"key": "apellido",
+											"value": "chuelo3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:15:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "delrol success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/delrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"delrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:21:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"name": "delrol fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "c@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "rol1,    rol2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/delrol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"delrol"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 04:21:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"103\",\n    \"description\": \"El rol rol1 no esta asignado al usuario\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "list All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 03:35:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"$oid\": \"61889acf0f31d988ff68a396\"\n        },\n        \"nombre\": \"rol1\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"61889b010f31d988ff68a397\"\n        },\n        \"nombre\": \"rol2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/roles/rol1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles",
+								"rol1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roles/rol1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles",
+										"rol1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 03:35:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"61889acf0f31d988ff68a396\"\n    },\n    \"nombre\": \"rol1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Rol",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "rol2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Rol fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nombre",
+											"value": "rol1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 03:35:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"code\": \"101\"\n}"
+						},
+						{
+							"name": "Create Rol success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nombre",
+											"value": "rol1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 03:34:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Autenticar",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "b@a.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "fail login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "asdasd",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:36:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\"\n}"
+						},
+						{
+							"name": "login success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "b@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 02:37:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Error-codes",
+			"item": [
+				{
+					"name": "Get All error codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/error-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"error-codes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All error codes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/error-codes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"error-codes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8080"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Nov 2021 03:16:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.32"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"code\": 101,\n        \"description\": \"El usuario que quiere crear ya existe.\"\n    },\n    {\n        \"code\": 102,\n        \"description\": \"El usuario no existe.\"\n    },\n    {\n        \"code\": 103,\n        \"description\": \"El rol indicado no se encuentra asignado a ese usuario.\"\n    },\n    {\n        \"code\": 104,\n        \"description\": \"la contraseña no coincide.\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

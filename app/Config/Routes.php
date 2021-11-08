@@ -33,9 +33,14 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/usuarios', 'Usuarios::index');
+$routes->post('/usuarios/addrol', 'Usuarios::addrol');
 $routes->get('/usuarios/(:any)', 'Usuarios::getOne/$1');
 $routes->post('/usuarios', 'Usuarios::create');
 $routes->post('/login', 'Autenticar::index');
+$routes->get('/error-codes', 'ErrorCodes::index');
+$routes->get('/roles', 'Roles::index');
+$routes->get('/roles/(:any)', 'Roles::getOne/$1');
+$routes->post('/roles', 'Roles::create');
 
 /*
  * --------------------------------------------------------------------
