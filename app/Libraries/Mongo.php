@@ -61,7 +61,7 @@ class Mongo
      */
     public function listindexes($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->listIndexes();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->listIndexes();
     }
 
     /**
@@ -452,7 +452,7 @@ class Mongo
      */
     public function count(string $collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->countDocuments($this->wheres, $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->countDocuments($this->wheres, $this->options);
     }
 
     /**
@@ -701,7 +701,7 @@ class Mongo
             throw new \Exception("Need Collection field information for performing distinct query", 500);
         }
         try {
-            $documents = $this->mongoConnectionInfos->dbInfo['default']->db->{$this->mongoConnectionInfos->prefix . $collection}->distinct($field, $this->wheres);
+            $documents = $this->mongoConnectionInfos->dbInfo['default']->db->{$this->mongoConnectionInfos->dbInfo['default']->prefix . $collection}->distinct($field, $this->wheres);
             $this->_clear();
             if ($this->return_as == 'object') {
                 return (object)$documents;
@@ -822,7 +822,7 @@ class Mongo
 
     public function insertOne($collection, $insertArray = [])
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->insertOne($insertArray)->getInsertedId();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->insertOne($insertArray)->getInsertedId();
     }
 
     /**
@@ -835,7 +835,7 @@ class Mongo
      */
     public function insertMany($collection, $insertArray = [])
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->insertMany($insertArray)->isAcknowledged();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->insertMany($insertArray)->isAcknowledged();
     }
 
     /**
@@ -847,7 +847,7 @@ class Mongo
      */
     public function findOne($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->findOne($this->wheres, $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->findOne($this->wheres, $this->options);
     }
 
     /**
@@ -868,17 +868,17 @@ class Mongo
      */
     public function find($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->find($this->wheres, $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->find($this->wheres, $this->options);
     }
 
     public function findOneAndUpdate($collection, $update = [])
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->findOneAndUpdate($this->wheres, ['$set' => $update], $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->findOneAndUpdate($this->wheres, ['$set' => $update], $this->options);
     }
 
     public function findOneAndDelete($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->findOneAndDelete($this->wheres, $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->findOneAndDelete($this->wheres, $this->options);
     }
 
     /**
@@ -901,7 +901,7 @@ class Mongo
      */
     public function aggregate($collection, $pipeline = [])
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->aggregate($pipeline, $this->options);
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->aggregate($pipeline, $this->options);
     }
 
     /**
@@ -913,22 +913,22 @@ class Mongo
      */
     public function updateOne($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->updateOne($this->wheres, $this->updates, $this->options)->isAcknowledged();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->updateOne($this->wheres, $this->updates, $this->options)->isAcknowledged();
     }
 
     public function updateMany($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->updateMany($this->where, $this->updates, $this->options)->isAcknowledged();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->updateMany($this->where, $this->updates, $this->options)->isAcknowledged();
     }
 
     public function deleteOne($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->deleteOne($this->wheres, $this->options)->isAcknowledged();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->deleteOne($this->wheres, $this->options)->isAcknowledged();
     }
 
     public function deleteMany($collection)
     {
-        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->prefix . $collection)->deleteMany($this->wheres, $this->options)->isAcknowledged();
+        return $this->m->selectCollection($this->mongoConnectionInfos->dbInfo['default']->db, $this->mongoConnectionInfos->dbInfo['default']->prefix . $collection)->deleteMany($this->wheres, $this->options)->isAcknowledged();
     }
 
     /**
